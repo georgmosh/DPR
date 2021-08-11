@@ -53,6 +53,14 @@ from dpr.utils.model_utils import (
 logger = logging.getLogger()
 setup_logger(logger)
 
+### ---------------------- HYDRA -----------------------
+@hydra.main(config_path="config", config_name="config", strict=False)
+def run(cfg: DictConfig) -> None:
+    print(cfg)
+
+if __name__ == '__main__':
+    run()
+# ------------------------------------------------------
 
 class BiEncoderTrainer(object):
     """
